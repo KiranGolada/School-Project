@@ -1,0 +1,424 @@
+/********************************************
+    ARAVALLI HEIGHTS SCHOOL - STYLE SHEET
+    Elegant Educational Theme (Navy + Gold)
+    Designed for: Professional School Website
+*********************************************/
+
+/* ---------------------------
+   GLOBAL SETTINGS
+--------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f4f6fa;
+    color: #1a1a1a;
+    transition: background 0.4s, color 0.4s;
+    overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #0a1a3c;
+    border-radius: 10px;
+}
+
+/* Dark Mode */
+body.dark {
+    background: #0f1625;
+    color: #e5e5e5;
+}
+body.dark .navbar {
+    background: #081021;
+}
+body.dark .section-title {
+    color: #d4af37;
+}
+body.dark .card, 
+body.dark .faculty-card, 
+body.dark .library-item, 
+body.dark .sport-card {
+    background: #162032;
+    color: #fff;
+}
+
+/* ---------------------------
+   NAVBAR
+--------------------------- */
+.navbar {
+    width: 100%;
+    padding: 18px 50px;
+    background: #0a1a3c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: 0.4s ease;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.navbar.scrolled {
+    background: #0f234f;
+    padding: 12px 50px;
+}
+
+.navbar h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #d4af37;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 17px;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+/* Dark Mode Toggle Button */
+#modeToggle {
+    padding: 8px 14px;
+    border-radius: 5px;
+    background: #d4af37;
+    color: #0a1a3c;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+#modeToggle:hover {
+    background: #b7912e;
+}
+
+/* ---------------------------
+   HERO SECTION (SLIDER)
+--------------------------- */
+.hero-slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider Text Overlay */
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    animation: fadeIn 1.2s ease-out;
+}
+
+.slider-text h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+.slider-text p {
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Slider Buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+    user-select: none;
+}
+.slider-btn:hover {
+    color: #d4af37;
+}
+#prev { left: 20px; }
+#next { right: 20px; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ---------------------------
+   SECTION HEADINGS
+--------------------------- */
+.section-title {
+    text-align: center;
+    margin: 70px 0 30px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #0a1a3c;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #d4af37;
+    margin: 12px auto 0;
+    display: block;
+    border-radius: 3px;
+}
+
+/* ---------------------------
+   ABOUT / VISION / MISSION
+--------------------------- */
+.section {
+    padding: 40px 80px;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.highlight-box {
+    background: white;
+    padding: 30px;
+    border-left: 8px solid #d4af37;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ---------------------------
+   COUNTERS
+--------------------------- */
+.counter-section {
+    display: flex;
+    justify-content: space-around;
+    background: #0a1a3c;
+    padding: 70px 0;
+    color: white;
+    text-align: center;
+}
+
+.counter {
+    font-size: 55px;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+.counter-label {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* ---------------------------
+   FACULTY PAGE
+--------------------------- */
+.search-bar {
+    width: 60%;
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 16px;
+    border: 2px solid #0a1a3c;
+    border-radius: 6px;
+    outline: none;
+}
+
+.faculty-container {
+    padding: 30px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+}
+
+.faculty-card {
+    width: 260px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.4s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.faculty-card:hover {
+    transform: translateY(-8px);
+}
+
+.faculty-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ---------------------------
+   LIBRARY PAGE
+--------------------------- */
+.library-grid {
+    padding: 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.library-item {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.library-item:hover {
+    transform: translateY(-8px);
+}
+
+.library-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ---------------------------
+   SPORTS PAGE TIMELINE
+--------------------------- */
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    width: 80%;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #d4af37;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 80px;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: 0.6s ease-out;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    background: #0a1a3c;
+    border: 3px solid #d4af37;
+    border-radius: 50%;
+}
+
+/* ---------------------------
+   MODAL ANNOUNCEMENT POPUP
+--------------------------- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    width: 450px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+    color: #0a1a3c;
+}
+
+.modal p {
+    line-height: 1.6;
+}
+
+#closeModal {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #0a1a3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ---------------------------
+   FOOTER
+--------------------------- */
+footer {
+    background: #0a1a3c;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin-top: 60px;
+}
