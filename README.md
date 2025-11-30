@@ -17,18 +17,7 @@ It helps users quickly understand the school’s features, facilities, and impor
 
 ---
 
-## 🔐 Login Details (If Required)
-If your project includes login, provide demo credentials:
-
-*Username / Email:* demo@gmail.com
-
-*Password:* 12345
-
-(If no login is required, remove this section)
-
----
-
-## 🚀 Deployment Link (Mandatory)
+## 🚀 Deployment Link
 Live Project Link:  
 https://kirangolada.github.io/School-Project/
 
